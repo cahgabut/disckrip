@@ -1,0 +1,111 @@
+
+    body {
+    padding-top: 60px;
+        video, canvas {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+     font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #A7C6ED, #F4B6C2);
+    }
+  .animated-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-bg::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #A7C6ED 80%, #FAD2E1 80%, #FFF5BA 60%, #FFFFFF 20%);
+    filter: blur(100px);
+    animation: lavaAnimation 2s infinite linear alternate;
+}
+
+@keyframes lavaAnimation {
+    0% { transform: translateX(-20%) translateY(-20%) scale(1); }
+    25% { transform: translateX(20%) translateY(-10%) scale(1.1); }
+    50% { transform: translateX(10%) translateY(20%) scale(1); }
+    75% { transform: translateX(-10%) translateY(10%) scale(1.1); }
+    100% { transform: translateX(-20%) translateY(-20%) scale(1); }
+}
+
+.loading-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Courier New', monospace;
+    z-index: 9999;
+}
+
+#loading-text {
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 1;
+    animation: fadeInOut 1.5s infinite;
+}
+
+#typing-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff7eb3;
+    text-shadow: 0 0 10px #ff7eb3, 0 0 20px #ff7eb3;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 2s steps(10) forwards;
+}
+
+#protected-text {
+    font-size: 14px;
+    opacity: 0;
+    margin-top: 20px;
+    color: #ddd;
+    animation: fadeIn 2s 2s forwards;
+}
+
+/* Animasi LOADING */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 14ch; } /* Sesuai panjang teks "HAPPY ARUNA" */
+}
+
+/* Animasi Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+  marquee {
+    width: 200px;
+  }
+  #sidebar {
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  }
+  header {
+    height: 40px; /* Tinggi header lebih kecil */
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+  marquee {
+    max-width: 160px; /* Lebar maksimum marquee */
+  }
+    
